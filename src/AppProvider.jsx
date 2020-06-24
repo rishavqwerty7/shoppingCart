@@ -9,21 +9,21 @@ class AppProvider extends Component {
     this.state = {
       data: data,
       cartArr: [],
-      orderArr:[]
+      orderArr: [],
     }
   }
 
   addToCart = (payload) => {
-    let item = this.state.data.find((ele) => ele.id == payload)
+    let item = this.state.data.find((ele) => ele.id === payload)
     this.setState({
       cartArr: [...this.state.cartArr, item],
     })
   }
 
-  confirmOrder=(payload)=>{
+  confirmOrder = (payload) => {
     this.setState({
-        orderArr: [...this.state.orderArr, payload],
-      })
+      orderArr: [...this.state.orderArr, payload],
+    })
   }
 
   getCart = () => {
@@ -42,8 +42,8 @@ class AppProvider extends Component {
       getData: this.getData,
       getCart: this.getCart,
       addToCart: this.addToCart,
-      confirmOrder:this.confirmOrder,
-      getOrder:this.getOrder
+      confirmOrder: this.confirmOrder,
+      getOrder: this.getOrder,
     }
     return (
       <AppContext.Provider value={methods}>
