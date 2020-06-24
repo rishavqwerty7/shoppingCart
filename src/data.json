@@ -1,0 +1,26 @@
+[
+    {
+        "name":"shirt",
+        "id":201,
+        "price":700,
+        "src":"https://scx2.b-cdn.net/gfx/news/hires/2019/2-nature.jpg"
+    },
+    {
+        "name":"shorts",
+        "id":202,
+        "price":500,
+        "src":"https://scx2.b-cdn.net/gfx/news/hires/2019/2-nature.jpg"
+    },
+    {
+        "name":"trouser",
+        "id":203,
+        "price":900,
+        "src":"https://scx2.b-cdn.net/gfx/news/hires/2019/2-nature.jpg"
+    },
+    {
+        "name":"jeans",
+        "id":204,
+        "price":750,
+        "src":"https://scx2.b-cdn.net/gfx/news/hires/2019/2-nature.jpg"
+    }
+]
