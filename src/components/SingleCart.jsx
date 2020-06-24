@@ -1,8 +1,8 @@
 import React, { useContext } from "react"
 
-function SingpleItem(props) {
-  const { data, handleClick } = props
-
+function SingleCart(props) {
+  const { data } = props
+  console.log("hi")
   return (
     <div
       style={{
@@ -17,9 +17,8 @@ function SingpleItem(props) {
       <label>{data.name}</label>
       <label>{data.price}</label>
       <label>{data.id}</label>
-      <button onClick={() => handleClick(data.id)}>Add Cart</button>
     </div>
   )
 }
 
-export default SingpleItem
+export default SingleCart

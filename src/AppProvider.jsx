@@ -1,43 +1,43 @@
-import React, { createContext ,Component} from "react";
-import data from './data.json';
+import React, { createContext, Component } from "react"
+import data from "./data.json"
 
-export const AppContext=createContext()
+export const AppContext = createContext()
 
-class AppProvider extends Component{
-    constructor(props){
-        super(props)
-        this.state={
-            data:data,
-            cartArr:[]
-        }
+class AppProvider extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      data: data,
+      cartArr: [],
     }
+  }
 
-    addToCart=(payload)=>{
-        let item=this.state.data.find(ele=>ele.id==payload)
-        this.setState({
-            cartArr:[...this.state.cartArr,item]
-        })
-    }
+  addToCart = (payload) => {
+    let item = this.state.data.find((ele) => ele.id == payload)
+    this.setState({
+      cartArr: [...this.state.cartArr, item],
+    })
+  }
 
-    getCart=()=>{
-        return this.state.cartArr
-    }
+  getCart = () => {
+    return this.state.cartArr
+  }
 
-    getData=()=>{
-        return this.state.data
+  getData = () => {
+    return this.state.data
+  }
+  render() {
+    let methods = {
+      getData: this.getData,
+      getCart: this.getCart,
+      addToCart: this.addToCart,
     }
-    render(){
-        let methods={
-            getData:this.getData,
-            getCart:this.getCart,
-            addToCart:this.addToCart
-        }
-        return(
-            <AppContext.Provider value={methods}>
-                {this.props.children}
-            </AppContext.Provider>
-        )
-    }
+    return (
+      <AppContext.Provider value={methods}>
+        {this.props.children}
+      </AppContext.Provider>
+    )
+  }
 }
 
-export default AppProvider;
+export default AppProvider
