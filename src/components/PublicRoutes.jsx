@@ -80,7 +80,7 @@ class PublicRoute extends React.Component {
             path="/Products"
             render={(props) => (
               <AllProducts
-                {...props}
+                {...l
                 addToCart={this.addToCart}
                 isAuth={isAuth}
                 data={data}
