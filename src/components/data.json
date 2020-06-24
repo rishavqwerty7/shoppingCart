@@ -1,0 +1,23 @@
+[
+    {
+        "name":"shirt",
+        "id":201,
+        "price":700,
+        "src":"public/logo192.png"
+    },
+    {
+        "name":"shorts",
+        "id":202,
+        "price":500
+    },
+    {
+        "name":"trouser",
+        "id":203,
+        "price":900
+    },
+    {
+        "name":"jeans",
+        "id":204,
+        "price":750
+    }
+]
