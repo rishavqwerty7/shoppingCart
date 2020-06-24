@@ -9,6 +9,7 @@ class AppProvider extends Component {
     this.state = {
       data: data,
       cartArr: [],
+      orderArr:[]
     }
   }
 
@@ -19,8 +20,18 @@ class AppProvider extends Component {
     })
   }
 
+  confirmOrder=(payload)=>{
+    this.setState({
+        orderArr: [...this.state.orderArr, payload],
+      })
+  }
+
   getCart = () => {
     return this.state.cartArr
+  }
+
+  getOrder = () => {
+    return this.state.orderArr
   }
 
   getData = () => {
@@ -31,6 +42,8 @@ class AppProvider extends Component {
       getData: this.getData,
       getCart: this.getCart,
       addToCart: this.addToCart,
+      confirmOrder:this.confirmOrder,
+      getOrder:this.getOrder
     }
     return (
       <AppContext.Provider value={methods}>

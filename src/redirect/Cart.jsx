@@ -8,10 +8,17 @@ class Cart extends Component {
     this.state = {
       name: "",
       phone: "",
+      email:''
     }
   }
+
+  handleChange=(e)=>{
+    this.setState({
+      [e.target.name]:e.target.value
+    })
+  }
   render() {
-    const { getCart } = this.context
+    const { getCart, confirmOrder } = this.context
     let data = getCart()
     return (
       <div style={{ padding: "1rem  10rem" }}>
@@ -22,7 +29,7 @@ class Cart extends Component {
               type="text"
               name="name"
               onChange={this.handleChange}
-              value={}
+              value={this.state.name}
             />
           </div>
           <div>
@@ -31,7 +38,7 @@ class Cart extends Component {
               type="text"
               name="phone"
               onChange={this.handleChange}
-              value={}
+              value={this.state.phone}
             />
           </div>
           <div>
@@ -40,10 +47,10 @@ class Cart extends Component {
               type="text"
               name="email"
               onChange={this.handleChange}
-              value={}
+              value={this.state.email}
             />
           </div>
-          <button></button>
+          <button onClick={()=>confirmOrder({name:this.state.name,phone:this.state.phone, email:this.state.email, data:data})}>Place Order</button>
         </div>
         {data &&
           data.map((ele, index) => {
